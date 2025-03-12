@@ -39,6 +39,20 @@ export const authorizeRoles = (...roles) =>
     next();
   });
 
+  const checkSubscriptionStatus = async (req, res, next) => {
+    const user = await User.findById(req.user.id);
+  
+    // Sync the subscription status
+    await syncSubscriptionStatus(user);
+  
+    if (user.subscription.status !== 'active') {
+      return next(new AppError('Subscription is not active. Access denied.', 403));
+    }
+  
+    next();
+  };
+  
+
 // Middleware to check if user has an active subscription or not
 export const authorizeSubscribers = asyncHandler(async (req, _res, next) => {
   // console.log("User data in authorizeSubscribers:", req.user);

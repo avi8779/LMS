@@ -14,7 +14,7 @@ const subscriptionSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ['active', 'inactive', 'created'],  // The status can be one of these values
+      enum: ['active', 'inactive', 'created',],  // The status can be one of these values
       default: 'inactive',
     },
     start_date: {

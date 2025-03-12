@@ -125,6 +125,7 @@ const Layout = ({ children }) => {
 
       {children}
 
+      
       {/* adding the footer content */}
       <Footer />
     </div>

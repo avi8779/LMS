@@ -29,6 +29,8 @@ const ForgetPassword = () => {
 
     // calling the api from auth slice
     const res = await dispatch(forgetPassword(email));
+    console.log(res);
+    
 
     // clearing the input fields
     setEmail("");

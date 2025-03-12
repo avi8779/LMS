@@ -8,7 +8,7 @@ import errorMiddleware from './middlewares/error.middleware.js';
 
 const app = express();
 
-// Middlewares
+// Middlewares 
 // Built-In
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
